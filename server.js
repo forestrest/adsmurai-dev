@@ -1,9 +1,11 @@
 const { json } = require('body-parser');
+'use strict';
+
+// [START app]
 const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-//   res.send('Hello from App Engine!');
   res.send(JSON.stringify( {
     "product_id": "SKU_12345",
     "product_name": "Really comfortable shoes",
@@ -25,3 +27,6 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}...`);
 });
+// [END app]
+
+module.exports = app;
