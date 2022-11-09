@@ -46,20 +46,19 @@ app.get('/data',async (req, res) => {
     return corsMiddleware(req, res, () => {
       const servicedata = req.body;
       res.json({
-        product:{ 
-          product_id : "SKU_12345", 
-          product_name : "Really comfortable shoes", 
-          product_brand : "Adsmurai",
+        data:{
+        product_id : "SKU_12345",
+        product_name : "Really comfortable shoes",
+        product_brand : "Adsmurai",
+        categories : {
+          product_category: "Apparel",
+          product_category2: "Adult",
+          product_category3: "Shoes"
         },
-        categories : { 
-          product_category : "Apparel", 
-          product_category2 : "Adult", 
-          product_category3 : "Shoes"
-        },
-        prices: { 
-          product_price: "39,99", 
+        prices: {
+          product_price: "39,99",
           product_currency: "€"
-        },
+        }}
       });
     });
 
