@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/style.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -18,7 +19,39 @@
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-W3R99DP");
     </script>
+    <script>
+      var div = document.getElementById("myData");
+
+      jQuery(document).ready(function () {
+        const Url = "https://adsmurai-dev2-fyre3k7cwq-uc.a.run.app/";
+        jQuery(".btn").click(function () {
+          jQuery.ajax({
+            url: Url,
+            type: "GET",
+            success: function (result) {
+              console.log(result);
+              // x = result.title;
+              // var jobTitle = x;
+              // document.getElementById("jobTitle").innerHTML = jobTitle;
+              // y = result.content;
+              // var jobDescription = y;
+              // document.getElementById("jobDescription").innerHTML =
+              //   jobDescription;
+            },
+            error: function (error) {
+              console.log(`Error ${error}`);
+            },
+          });
+        });
+      });
+    </script>
+
     <!-- End Google Tag Manager -->
   </head>
-  <body></body>
+  <body>
+    <button class="btn">Clicke here for the GET request</button>
+
+    <div id="jobTitle">Job Title here</div>
+    <div id="jobDescription">Job Description here</div>
+  </body>
 </html>
