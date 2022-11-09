@@ -6,21 +6,22 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send({
+  res.json({
     data: {
-      "product_id": "SKU_12345",
-      "product_name": "Really comfortable shoes",
-      "product_brand": "Adsmurai",
-      "categories": {
-        "product_category": "Apparel",
-        "product_category2": "Adult",
-        "product_category3": "Shoes"
+      product_id : "SKU_12345",
+      product_name : "Really comfortable shoes",
+      product_brand : "Adsmurai",
+      categories : {
+        product_category : "Apparel",
+        product_category2 : "Adult",
+        product_category3 : "Shoes"
       },
-      "prices": {
-        "product_price": "39,99",
-        "product_currency": "€"
+      prices: {
+        product_price: "39,99",
+        product_currency: "€"
       }
-    }
+    },
+    success: "Exitoso",
   });
 });
 
