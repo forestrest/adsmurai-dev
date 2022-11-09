@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.json({
+  res.send({
     data: {
       "product_id": "SKU_12345",
       "product_name": "Really comfortable shoes",
